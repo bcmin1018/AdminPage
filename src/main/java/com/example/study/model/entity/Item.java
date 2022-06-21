@@ -1,11 +1,15 @@
 package com.example.study.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,7 +17,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @ToString(exclude = {"orderDetailList", "partner"})
+@Builder
+@Accessors(chain = true)
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,13 +29,21 @@ public class Item {
     private String name;
     private String title;
     private String content;
-    private Integer price;
+    private BigDecimal price;
     private String brand_name;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
+
+    @CreatedDate
     private LocalDateTime createdAt;
+
+    @CreatedBy
     private String createdBy;
+
+    @LastModifiedDate
     private LocalDateTime updatedAt;
+
+    @LastModifiedBy
     private String updatedBy;
 
     @ManyToOne
