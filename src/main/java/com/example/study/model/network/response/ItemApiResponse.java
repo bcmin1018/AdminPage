@@ -20,7 +20,7 @@ public class ItemApiResponse {
     private String title;
     private String content;
     private BigDecimal price;
-    private String brand_name;
+    private String brandName;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
     private Long partnerId;

@@ -1,9 +1,6 @@
 package com.example.study.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -20,6 +17,8 @@ import java.util.List;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @ToString(exclude = {"itemList", "category"})
+@Builder
+
 public class Partner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +31,7 @@ public class Partner {
     private String businessNumber;
     private String ceoName;
     private LocalDateTime registeredAt;
+    private LocalDateTime unregisteredAt;
     @CreatedDate
     private LocalDateTime createdAt;
 

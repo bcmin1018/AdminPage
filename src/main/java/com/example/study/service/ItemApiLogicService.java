@@ -30,7 +30,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
                 .title(body.getTitle())
                 .content(body.getContent())
                 .price(body.getPrice())
-                .brand_name(body.getBrand_name())
+                .brandName(body.getBrandName())
                 .registeredAt(LocalDateTime.now())
                 .partner(partnerRepository.getOne(body.getPartnerId()))
                 .build();
@@ -58,7 +58,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
                             .setTitle(body.getTitle())
                             .setContent(body.getContent())
                             .setPrice(body.getPrice())
-                            .setBrand_name(body.getBrand_name())
+                            .setBrandName(body.getBrandName())
                             .setRegisteredAt(body.getRegisteredAt())
                             .setUnregisteredAt(body.getUnregisteredAt())
                             ;
@@ -88,7 +88,7 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
                 .title(item.getTitle())
                 .content(item.getContent())
                 .price(item.getPrice())
-                .brand_name(item.getBrand_name())
+                .brandName(item.getBrandName())
                 .registeredAt(item.getRegisteredAt())
                 .unregisteredAt(item.getUnregisteredAt())
                 .partnerId(item.getPartner().getId())
