@@ -13,10 +13,10 @@ import java.time.LocalDateTime;
 @Builder
 public class CategoryApiResponse {
     private Long id;
-    private String Type;
-    private String description;
+    private String type;
+    private String title;
     private LocalDateTime createdAt;
-    private LocalDateTime createdBy;
+    private String createdBy;
     private LocalDateTime updatedAt;
-    private LocalDateTime updatedBy;
+    private String updatedBy;
 }
